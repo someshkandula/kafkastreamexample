@@ -1,0 +1,27 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol ShipmentProfileProtocol {
+    import idl "sub_detail.avdl";
+
+  record ShipmentProfile{
+      string id;
+      string tenant_id;
+      union {null,string} name=null;
+      union {null,string} tenant_name=null;
+      union {null,array<string>} notification_groups=null;
+      union {null,string} recipient_name=null;
+      union {null,RouteSD} route=null;
+      union {null,string} sensor_profile_name=null;
+      union {null,string} ruleset_id=null;
+      union {null,boolean} shipments_created=null;
+      union {null,boolean} enabled=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+
+  }
+
+
+}

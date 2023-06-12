@@ -1,0 +1,61 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol RulesProtocol {
+    import idl "sub_detail.avdl";
+
+  record Rules{
+      string app_id;
+      string rule_id;
+      string stage_id;
+      string tenant_id;
+      union {null,boolean} is_ruleset=null;
+      union {null,map<string>} properties=null;
+      union {null,RecipeSD} recipe=null;
+      union {null,string} rule_class=null;
+      union {null,string} rule_type=null;
+      union {null,boolean} deleted=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+  }
+
+  record Recipe{
+      string id;
+      string tenant_id;
+      union {null,array<string>} action_ids=null;
+      union {null,map<string>} action_params=null;
+      union {null,boolean} active=null;
+      union {null,string} application=null;
+      union {null,string} category_id=null;
+      union {null,boolean} deleted=null;
+      union {null,array<string>} rule_ids=null;
+      union {null,string} scope=null;
+      union {null,string} title=null;
+      union {null,string} trigger_application=null;
+      union {null,string} trigger_group=null;
+      union {null,string} trigger_id=null;
+      union {null,map<string>} trigger_params=null;
+      union {null,string} user_id=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+  }
+
+  record Ruleset{
+      string id;
+      string tenant_id;
+      union {null,string} name=null;
+      union {null,boolean} deleted=null;
+      union {null,boolean} enable=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,array<RecipeSD>} recipes=null;
+      union {null,boolean} is_reindex=null;
+    }
+}

@@ -1,0 +1,110 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol SubDetail {
+    record CategorySD{
+        union {null,string} type_id=null;
+        union {null,string} type_name=null;
+    }
+    record TenantSD{
+        union {null,string} tenant_id=null;
+        union {null,string} tenant_name=null;
+    }
+    record ShipmentSD{
+        union {null,string} shipment_id=null;
+        union {null,string} shipment_name=null;
+        union {null,string} shipment_ext_id=null;
+    }
+    record RulesetSD{
+        union {null,string} ruleset_id=null;
+        union {null,string} ruleset_name=null;
+    }
+    record TaggedAssetSD{
+        union {null,string} ta_id=null;
+        union {null,string} status=null;
+        union {null,boolean} deleted=null;
+        union {null,string} creation_time=null;
+        union {null,string} modified_time=null;
+        union {null,string} created_by=null;
+        union {null,string} modified_by=null;
+        union {null,array<SensorTagSD>} devices=null;
+        union {null,RulesetSD} ruleset=null;
+        union {null,string} carrier_tracking_number=null;
+    }
+    record DeviceTagInfoSD{
+        union {null,string} ta_id=null;
+        union {null,AssetSD} asset=null;
+    }
+
+    record SensorTagSD{
+        union {null,string} device_id=null;
+        union {null,string} status=null;
+        union {null,string} device_type=null;
+    }
+
+    record AssetSD{
+        union {null,string} asset_id=null;
+        union {null,string} asset_ext_id=null; 
+        union {null,string} asset_name=null;
+    }
+
+    record LeaseSD{
+        union {null,string} lease_id=null;
+        union {null,string} lease_ext_id=null;
+        union {null,string} lease_status=null;
+    }
+
+    record RouteSD{
+         union {null,string} route_id=null;
+         union {null,string} route_name=null;
+         union {null,string} origin_id=null;
+         union {null,string} origin_name=null;
+         union {null,string} destination_id=null;
+         union {null,string} destination_name=null;
+    }
+
+    record ShipmentMetricsSD{
+         union {null, int} excursion_count=null;
+         union {null, array<string>} excursions=null;
+         union {null, int}  excursions_at_destination=null;
+         union {null, int}  excursions_at_intransit=null;
+         union {null, int}  excursions_at_origin=null;
+    }
+
+    record DeviceAssetInfoSD{
+        union {null,string} tag_id=null; 
+        union {null,AssetSD} asset=null;
+    }
+
+    record GeoFenceSD{
+        union {null,string} tenantId=null;
+        union {null,string} routeId=null;
+        union {null,string} countryCode=null;
+        union {null,string} coordinates=null;
+        union {null,string} fenceType=null;
+        union {null,string} areaName=null;
+        union {null,string} areaType=null;
+        union {null,map<string>} properties=null;
+        union {null,string} country=null;
+        union {null,string} state=null;
+        union {null,string} postalCode=null;
+        union {null,string} stateCode=null;
+        union {null,string} zoneId=null;
+    }
+
+    record AppliedObjectDetails{
+        union {null,array<map<string>>} objects=null;
+    }
+
+    record RecipeSD{
+        union {null,string} recipe_id=null;
+        union {null,boolean} deleted=null;
+        union {null,string} scope=null;
+        union {null,string} tenant_id=null;
+        union {null,string} creation_time=null;
+        union {null,string} modified_time=null;
+        union {null,string} created_by=null;
+        union {null,string} modified_by=null;
+    }
+
+}
+

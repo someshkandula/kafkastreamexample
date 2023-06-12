@@ -1,0 +1,57 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol NotificationProtocol {
+    import idl "sub_detail.avdl";
+
+    enum Severity {
+        EXCURSION,
+        CRITICAL,
+        WARNING,
+        NORMAL,
+        INFO
+    }
+
+    enum Status {
+        READ,
+        UNREAD
+    }
+
+    record NotificationEvent {
+        string user_id;
+        union {null,string} transport=null;
+        string time;
+        union {null,string} object_id=null;
+        union {null,string} context_id=null;
+        union {null,string} object_type=null;
+        union {null,string} context_type=null;
+        union {null,string} object_name=null;
+        union {null,string} property_name=null;
+        union {null,string} property_value=null;
+        union {null,string} recipe_id=null;
+        union {null,string} application=null;
+        Severity severity;
+        union {null,string} violation_type=null;
+        union {null,string} violation_type_group=null;
+        union {null,string} tenant_id=null;
+        string elastic_doc_id;
+        union {null,string} alt_body=null;
+        Status status;
+        union {null,string} delivery_time=null;
+        union {null,string} body=null;
+        union {null,string} subject=null;
+        union {null,string} gps=null;
+        union {null,string} address=null;
+        union {null,string} threshold=null;
+        union {null,string} delay=null;
+        union {null,string} delay_tolerance=null;
+        union {null,string} unit=null;
+        union {null,string} severity_extended=null;
+        union {null,map<string>} additional_context=null;
+        union {null,string} object_ext_id=null;
+        union {null,string} context_ext_id=null;
+        union {null,map<array<string>>} endpoints=null;
+        union {null,string} organization=null;
+    }
+
+
+}

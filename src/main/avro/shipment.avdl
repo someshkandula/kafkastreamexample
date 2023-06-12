@@ -1,0 +1,65 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol ShipmentProtocol {
+    import idl "sub_detail.avdl";
+
+    record AssetShipment{
+        string asset_id;
+        union {null,string} tagged_asset_id=null;
+        union {null,boolean} deleted=null;
+        union {null,boolean} completed=null;
+        union {null,string} created_by=null;
+        union {null,string} modified_by=null;
+        union {null,string} modified_time=null;
+        union {null,string} created_time=null;
+    }
+
+    record Shipment{
+        string id;
+        string tenant_id;
+        union {null,string} tenant_name=null;
+        union {null,string} shipment_name=null;
+        union {null,string} planned_arrival_time=null;
+        union {null,string} planned_dep_time=null;
+        union {null,string} recipient_name=null;
+        union {null,string} air_way_bill_number=null;
+        union {null,string} shipment_profile_id=null;
+        union {null,string} shipment_profile_name=null;
+        union {null,string} event_profile_name=null;
+        union {null,string} shipper_code=null;
+        union {null,string} shipper_name=null;
+        union {null,array<AssetShipment>} assets=null;
+        union {null,RouteSD} route=null;
+        union {null,boolean} deleted=null;
+        union {null,string} creation_time=null;
+        union {null,string} modified_time=null;
+        union {null,string} created_by=null;
+        union {null,string} modified_by=null;
+        union {null,RulesetSD} ruleset=null;
+        union {null,boolean} is_reindex=null;
+        union {null,boolean} origin_hidden=null;
+        union {null,boolean} dest_hidden=null;
+        union {null,boolean} route_hidden=null;
+        union {null,string} type=null;
+        union {null,string} external_id=null;
+        union {null,string} customer_order_reference=null;
+        union {null,string} customer_code=null;
+        union {null,string} carrier_name=null;
+        union {null,string} customer_name=null;
+        union {null,string} order_no=null;
+        union {null,array<string>} tracking_numbers=null;
+        union {null,boolean} direct_to_residence=null;
+        union {null,array<map<string>>} tags=null;
+        union {null,string} payloadOf=null;
+        union {null,string} direction=null;
+        union {null,string} shipmentSeq=null;
+        union {null,string} compositeShipmentName=null;
+        union {null,string} notes=null;
+        union {null,string} notes_modified_by=null;
+        union {null,string} notes_modified_time=null;
+        union {null,string} restricted_eurl=null;
+        union {null,string} un_restricted_eurl=null;
+    }
+
+
+}

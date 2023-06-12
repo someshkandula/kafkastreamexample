@@ -1,0 +1,111 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol GeoFenceProtocol {
+    import idl "sub_detail.avdl";
+    import idl "geo_support.avdl";
+
+  record Address{
+        union {null,string} street_addr=null; 
+        union {null,string} city=null; 
+        union {null,string} state_code=null;
+        union {null,string} postal_code=null;
+        union {null,string} country_code=null;
+        union {null,string} zone_id=null;
+  }
+
+  record GeoFence{
+      string id;
+      string  tenant_id;
+      union {null,string} name=null;
+      union {null,string} type=null;
+      union {null,string} description=null;
+      union {null,string} created_by=null;
+      union {null,string} created_time=null;
+      union {null,boolean} deleted=null;
+      union {null,string} modified_by=null;
+      union {null,string} modified_time=null;
+      union {null,string} geo_json=null;
+      union {null,Address} address=null;
+      union {null,map<string>} properties=null;
+      union {null,int} sort_order=null;
+      union {null,string} building_id=null;
+      union {null,boolean} is_reindex=null;
+      union {null,boolean} hidden=null;
+      union {null,string} external_id=null;
+      union {null,RulesetSD} ruleset=null;
+
+      //Added to support MemSQL
+      union {null,string} geography=null;
+      union {null,float} circle_radius=null;
+
+  }
+
+  record IntransitRouteArea {
+    string area_id;
+    union {null,boolean} deleted=null;
+    union {null,int} loc_seq=null;
+    union {null,string} travel_mode=null;
+    union {null,string} travel_time=null;
+    union {null,string} route_geo_json=null;
+    union {null,string} travel_duration=null;
+    union {null,string} layover=null;
+    union {null,string} creation_time=null;
+    union {null,string} modified_time=null;
+    union {null,string} created_by=null;
+    union {null,string} modified_by=null;
+    union {null,GeoFenceSD} geoFence=null;
+
+     //Added to support MemSQL
+    union {null,string} route_geogeography=null;
+
+  }
+
+   record IntransitRoute {
+    string id;
+    string  tenant_id;
+    union {null,string} route_name=null;
+    union {null,string} description=null;
+    union {null,string} source=null;
+    union {null,string} destination=null;
+    union {null,string} partition_text=null;
+    union {null,boolean} deleted=null;
+    union {null,string} creation_time=null;
+    union {null,string} modified_time=null;
+    union {null,string} created_by=null;
+    union {null,string} modified_by=null;
+    union {null,string} status_code=null;
+    union {null,string} transport_mode=null;
+    union {null,map<string>} properties=null;
+    union {null,string} timestamp=null;
+    union {null,array<IntransitRouteArea>} route_areas=null;
+    union {null,boolean} is_reindex=null;
+    union {null,string} external_id=null;
+    union {null,boolean} hidden=null;
+
+  }
+
+    record Site{
+          string id;
+          string  tenant_id;
+          union {null,string} name=null;
+          union {null,string} type=null;
+          union {null,double} locus_lat=null;   
+          union {null,double} locus_lng=null;
+          union {null,double} height=null;
+          union {null,string} geo_json=null;
+          union {null,array<string>} tags=null;
+          union {null,Address} address=null;
+          union {null,boolean} deleted=null;
+          union {null,int} sort_order=null;
+          union {null,map<string>} properties=null;
+          union {null,string} sub_type=null;
+          union {null,string} creation_time=null;
+          union {null,string} modified_time=null;
+          union {null,string} created_by=null;
+          union {null,string} modified_by=null;
+          union {null,boolean} is_reindex=null;
+          union {null,RulesetSD} ruleset=null;
+
+      }
+
+}

@@ -1,0 +1,23 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol TenantProtocol {
+  import idl "sub_detail.avdl";
+    
+  record Tenant{
+      string id;
+      union {null,string} type=null; 
+      union {null,string} name=null;
+      union {null,string} status=null;
+      union {null,array<string>} buildings=null;
+      union {null,array<string>} zones=null;
+      union {null,boolean} deleted=null;
+      union {null,map<string>} properties=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+      union {null,RulesetSD} ruleset=null;
+      union {null,string} logo=null;
+  }
+}

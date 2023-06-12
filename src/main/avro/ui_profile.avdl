@@ -1,0 +1,20 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+protocol UIProfileProtocol {
+    import idl "sub_detail.avdl";
+  record UIProfile{
+      string id;
+      string  tenant_id;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,string} profileName=null;
+      union {null,string} pageData=null;
+      union {null,boolean} isDefault=null;
+      union {null,boolean} isAssigned=null;
+      union {null,boolean} deleted=null;
+      union {null,boolean} is_reindex=null;
+      union {null,map<string>} properties=null;
+      union {null,string} module=null;
+  }
+}

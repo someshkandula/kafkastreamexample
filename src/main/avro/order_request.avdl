@@ -1,0 +1,40 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol OrderRequestProtocol {
+    import idl "sub_detail.avdl";
+
+  record OrderRequest{
+      string request_id;
+      string  tenant_id;
+      union {null,string} tenant_name = null;
+       union {null,string} accountId=null;
+      union {null,string} bill_to = null;
+      union {null,string} confirmed_date = null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+       union {null,string} notes_modified_time=null;
+       union {null,string} notes_modified_by=null;
+       union {null,string} custNotes_modified_time=null;
+       union {null,string} custNotes_modified_by=null;
+      union {null,string} customer_note = null;
+      union {null,string} customer_refno = null;
+      union {null,boolean} deleted = null;
+      union {null,string} notes=null;
+      union {null,string} order_contact=null;
+      union {null,array<string>} order_lines =null;
+      union {null,int} order_lines_count = null;
+      union {null,string} order_name = null;
+      union {null,string} order_number = null;
+      union {null,double} order_value = null;
+      union {null,string} promised_delivery_date= null;
+      union {null,string} requested_delivery_date = null;
+      union {null,string} submitted_date = null;
+      union {null,string} ship_to=null;
+      union {null,string} status=null;
+      union {null,boolean} is_reindex=null;
+  }
+
+
+}

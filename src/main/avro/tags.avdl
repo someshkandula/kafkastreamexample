@@ -1,0 +1,19 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol TagsProtocol {
+ import idl "sub_detail.avdl";
+  record Tags{
+      string id;
+      union {null,string} tag_name=null;
+      union {null,string} tenant_id=null;
+      union {null,boolean} deleted=null;
+      union {null,boolean} disabled=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+      union {null,map<AppliedObjectDetails>} appliedObjects=null;
+
+  }
+}

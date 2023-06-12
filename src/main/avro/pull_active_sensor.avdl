@@ -1,0 +1,20 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol PullActiveSensorProtocol {
+    import idl "sub_detail.avdl";
+
+  record PullActiveSensorEvent{
+          string sensor_id;
+          string vendor_id;
+          union {null,string} sensor_type=null;
+          union {null,string} tenant_id=null;
+          union {null,string} last_snapshot_time=null;
+          union {null,string} vendor_start_time=null;
+          union {null,string} vendor_end_time=null;
+          union {null,int} reporting_interval=null;
+          union {null,string} service=null;
+          union {null,string} shard_notifytime=null;
+          union {null,boolean} isRecursive=null;
+          union {null,map<string>} properties=null;
+  }
+}

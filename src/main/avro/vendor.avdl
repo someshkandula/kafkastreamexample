@@ -1,0 +1,20 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+protocol VendorProtocol {
+	import idl "sub_detail.avdl";
+
+	record Vendor{
+        string id;
+        union {null,string}  authorization_base_url=null;
+         union {null,string}  authorization_type=null;
+         union {null,boolean} is_authorization_configurable=null;
+         union {null,string}  name=null;
+         union {null,string}  vendor_authorization_type=null;
+         union {null,string}  created_at=null;
+         union {null,string}  created_by=null;
+         union {null,string}  modified_at=null;
+         union {null,string}  modified_by=null;
+         union {null,boolean}  deleted=null;
+          union {null,boolean} is_reindex=null;
+          union {null,string}  gateway=null;
+	}
+	}

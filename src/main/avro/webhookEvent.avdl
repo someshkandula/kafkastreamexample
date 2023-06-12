@@ -1,0 +1,26 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol WebhookEventProtocol {
+    import idl "sub_detail.avdl";
+
+  record WebhookEvent{
+          string id;
+          string  tenant_id;
+          union {null,string} created_at=null;
+          union {null,string} created_by=null;
+          union {null,string} modified_by=null;
+          union {null,string} modified_at=null;
+          union {null,string} eventType=null;
+          union {null,string} source=null;
+          union {null,string} status=null;
+          union {null,string} data=null;
+           union {null,int} retryCount=null;
+           union {null,string} lastNotifiedOn=null;
+           union {null,string} nextNotifyTime=null;
+           union {null,string} subscriptionId=null;
+           union {null,string} objectId=null;
+            union {null,boolean} deleted=null;
+           union {null,boolean} is_reindex=null;
+
+  }
+}

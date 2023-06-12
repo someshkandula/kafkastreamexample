@@ -1,0 +1,151 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol EventsProtocol {
+    import idl "sub_detail.avdl";
+
+    record Stream{
+        string object_id;
+        string tenant_id;
+        union {null,string} source_id=null;
+        union {null,string} source_type=null;
+        union {null,string} property_name=null;
+        union {null,string} property_type=null;
+        union {null,string} property_class=null;
+        union {null,string} property_value=null;
+        union {null,string} stream_type=null;
+        union {null,string} context_id=null;
+        union {null,string} context_type=null;
+        union {null,string} time=null;
+        union {null,string} shard_date=null;
+        union {null,long} time_lag=null;
+        union {null,boolean} is_reindex=null;
+        union {null,string} vendor_id=null;
+        union {null,string} organization=null;
+    }
+
+    record DeviceStream{
+        string device_id;
+        string device_type;
+        string tenant_id;
+        union {null,string} level=null;
+        union {null,string} module=null;
+        union {null,string} property_name=null;
+        union {null,string} property_type=null;
+        union {null,string} property_value=null;
+        union {null,string} time=null;
+        union {null,string} shard_date=null;
+        union {null,long} time_lag=null;
+        union {null,boolean} is_reindex=null;
+    }
+
+    record MetricsStream{
+        string scope;
+        string type;
+        string group;
+        string tenant_id;
+        union {null,long} interval=null;
+        union {null,map<string>} metrics=null;
+        union {null,string} name=null;
+        union {null,string} time=null;
+        union {null,boolean} is_reindex=null;
+        union {null,string} organization=null;
+
+    }
+
+    record Violation{
+        string object_id;
+        string object_type;
+        string tenant_id;
+        union {null,string} context_id=null;
+        union {null,string} recipe_id=null;
+        union {null,string} context_type=null;
+        union {null,string} property_name=null;
+        union {null,string} property_value=null;
+        union {null,string} time=null;
+        union {null,string} severity=null;
+        union {null,string} violation_type=null;
+        union {null,string} violation_type_group=null;
+        union {null,string} location_name=null;
+        union {null,string} location_type=null;
+        union {null,boolean} stream_violated=null;
+        union {null,string} category_id=null;
+        union {null,string} source_id=null;
+        union {null,string} source_type=null;
+        union {null,map<string>} additional_context=null;
+        union {null,map<string>} user_action=null;
+        union {null,string} resolved=null;
+        union {null,boolean} notified=null;
+        union {null,string} event_profile_id=null;
+        union {null,string} address=null;
+        union {null,string} manual_action_required=null;
+        union {null,DeviceAssetInfoSD} tagged=null;
+        union {null,boolean} is_reindex=null;
+        union {null,string} application=null;
+        union {null,string} gps=null;
+        union {null,string} threshold=null;
+        union {null,string} severity_extended=null;
+        union {null,string} delay_tolerance=null;
+        union {null,string} object_ext_id=null;
+        union {null,string} context_ext_id=null;
+        union {null,string} organization=null;
+    }
+
+    record ShipmentStreamEvent {
+        string s_id;
+        string c_id;
+        string tenant_id;
+        string shipment_id;
+        string source_id;
+        string source_type;
+        union {null,string} asset_id=null;
+        union {null,string} tag_id=null;
+        union {null,string} peripheral_id=null;
+        union {null,string} value=null;
+        union {null,long} time=null;
+        union {null,long} evt_time=null;
+        union {null,string} vendor_id=null;
+        boolean is_spurios=false;
+    }
+
+    record PeripheralStreamEvent {
+        string s_id;
+        string c_id;
+        string tenant_id;
+        string source_id;
+        string source_type;
+        string peripheral_id;
+        long time;
+        long evt_time;
+        string value;
+        string property_class;
+        union {null,string} organization=null;
+    }
+
+    record SensorEvents{
+        string event_publisher_id;
+        union {null,string} event_publisher_type=null;
+        union {null,string} vendor_id=null;
+        union {null,string} peripheral_id=null;
+        union {null,string} asset_id=null;
+        union {null,string} tenant_id=null;
+        union {null,string} context_id=null;
+        union {null,string} context_type=null;
+        boolean is_pull_device=false;
+        array<Event> events;
+        union {null,string} organization=null;
+    }
+
+    record Event{
+        string s_id;
+        string c_id;
+        string source_id;
+        union {null,string} source_type=null;
+        long time;
+        long evt_time;
+        string value;
+        union {null,string} property_type=null;
+        union {null,string} property_class=null;
+        union {null,long} time_lag=null;
+    }
+
+}

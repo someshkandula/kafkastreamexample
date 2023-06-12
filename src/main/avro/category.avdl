@@ -1,0 +1,29 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol CategoryProtocol {
+    import idl "sub_detail.avdl";
+
+  record Category{
+      string id;
+      union {null,string} name=null;
+      string tenant_id;
+      union {null,string} tenant_name=null;
+      union {null,string} description=null;
+      union {null,string} status=null;
+      union {null,boolean} deleted=null;
+      union {null,int} sort_order=null;
+      union {null,map<string>} properties=null;
+      union {null,array<string>} status_values=null;
+      union {null,array<string>} metrics=null;
+      union {null,string} image_url=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+      union {null,RulesetSD} ruleset=null;
+      union {null,map<string>} components=null;
+  }
+
+
+}

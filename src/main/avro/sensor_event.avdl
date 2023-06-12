@@ -1,0 +1,34 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+
+protocol SensorEventProtocol {
+
+    import idl "sub_detail.avdl";
+
+
+    record SensorEvent{
+
+        string id;
+
+        string sensor_type;
+
+        string tenant_id;
+
+        string vendor_id;
+
+        union {null,string} type=null;
+
+        union {null,string} event_profile_name=null;
+
+        union {null,boolean} is_reindex=null;
+
+        union {null,string}  tagType;
+
+        union {null,string}  tagId;
+
+        union {null,int } reportingInterval=null;
+
+        union {null,map<string>} properties=null;
+    }
+
+}

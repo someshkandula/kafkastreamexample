@@ -1,0 +1,19 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol ApiActionProtocol {
+    record ApiActionEvent{
+        string id;
+        string tenant_id;
+        string object_id;
+        string object_name;
+        string object_type;
+        union {null,string}  user_id;
+        string httpUrl;
+        string httpPath;
+        union {null,string} port;
+        string httpMethod;
+        union {null,string} pathParams;
+        union {null,string} requestParams;
+        union {null,string} requestPayload;
+  }
+}

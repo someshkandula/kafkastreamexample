@@ -1,0 +1,18 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol CompositeShipmentProtocol {
+    import idl "sub_detail.avdl";
+
+    record CompositeShipment{
+          string id;
+          union {null,string} tenant_id=null;
+          union {null,string} name=null;
+          union {null,string} externalId=null;
+          union {null,string} modifiedBy=null;
+          union {null,string} modifiedTime=null;
+          union {null,string} createdBy=null;
+          union {null,string} createdTime=null;
+          union {null,boolean} deleted=null;
+          union {null,boolean} is_reindex=null;
+    }
+}

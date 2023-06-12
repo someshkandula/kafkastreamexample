@@ -1,0 +1,32 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol UserProtocol {
+    import idl "sub_detail.avdl";
+
+  record User{
+      string id;
+      string tenant_id;
+      union {null,string} password=null;
+      union {null,boolean} enabled=null;
+      union {null,boolean} deleted=null;
+      union {null,string} name=null;
+      union {null,string} email=null;
+      union {null,string} type=null;
+      union {null,map<string>} properties=null;
+      union {null,array<string>} roles=null;
+      union {null,array<string>} groups=null;
+      union {null,string} access_token=null;
+      union {null,string} token_expiry=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,map<string>} sec_questions=null;
+      union {null,map<string>} details=null;
+      union {null,string} timezone=null;
+      union {null,boolean} is_reindex=null;
+      union {null,string} ui_profile_id=null;
+      union {null,string} uiProfileName=null;
+      union {null,string} notificationChannels=null;
+  }
+
+
+}

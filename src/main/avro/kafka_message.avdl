@@ -1,0 +1,9 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol KafkaMessageProtocol {
+
+  record KafkaMessageEvent{
+      string message;
+      string requestId;
+  }
+}

@@ -1,0 +1,32 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol AssetProtocol {
+    import idl "sub_detail.avdl";
+
+  record Asset{
+      string id;
+      string tenant_id;
+      union {null,string} tenant_name=null;
+      union {null,string} name=null;
+      union {null,string} status=null;
+      union {null,string} external_id=null;
+      union {null,boolean} parent=null;
+      union {null,boolean} deleted=null;
+      union {null,string} image_url=null;
+      union {null,CategorySD} category=null;
+      union {null,TaggedAssetSD} tagged=null;
+      union {null,ShipmentSD} active_shipment=null;
+      union {null,LeaseSD} lease=null;
+      union {null,array<string>} payload=null;
+      union {null,string} payload_of=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+      union {null,array<ShipmentSD>} draft_shipments=null;
+      union {null,array<ShipmentSD>} pending_shipments=null;
+
+  }
+
+}

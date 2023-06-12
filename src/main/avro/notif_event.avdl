@@ -1,0 +1,26 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol NotifProtocol {
+
+  enum NotifLevel {
+    Critical,
+    Warning, 
+    Notice
+  }
+
+  record NotifEvent{
+     string tenant_id;
+     union {null,string} notification_type=null;
+     union {null,string} time=null;
+     union {null,string} asset_group=null;
+     NotifLevel level;
+     union {null,string} source_id=null;
+     array<NotifData> data=[];
+  }
+
+   record NotifData{
+     union {null,string} placeholder=null;
+     union {null,string} value=null;
+  }
+
+}

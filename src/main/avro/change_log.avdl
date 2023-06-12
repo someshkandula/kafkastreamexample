@@ -1,0 +1,72 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol ChangelogKafkaProtocol {
+    import idl "asset.avdl";
+    import idl "category.avdl";
+    import idl "event_profile.avdl";
+    import idl "geo_fence.avdl";
+    import idl "lease.avdl";
+    import idl "policy.avdl";
+    import idl "Receiver.avdl";
+    import idl "role.avdl";
+    import idl "sensor_tag.avdl";
+    import idl "shipment_profile.avdl";
+    import idl "shipment.avdl";
+    import idl "tenant.avdl";
+    import idl "user.avdl";
+    import idl "bulk_data_job.avdl";
+    import idl "ui_profile.avdl";
+    import idl "tags.avdl";
+    import idl "carrier.avdl";
+    import idl "vendor_credentials.avdl";
+    import idl "composite_shipment.avdl";
+    import idl "product.avdl";
+    import idl "order_request.avdl";
+    import idl "rules.avdl";
+    import idl "vendor.avdl";
+    enum OperationType {
+       CREATE,
+       UPDATE,
+       DELETE,
+       NO_OPS
+    }
+
+    enum ObjectType {
+        TENANT,
+        USER,
+        ASSET,
+        CATEGORY,
+        EVENTPROFILE,
+        GEOFENCE,
+        INTRANSITROUTE,
+        SITE,
+        LEASE,
+        POLICY,
+        RECEIVER,
+        ROLE,
+        SENSORTAG,
+        SHIPMENTPROFILE,
+        SHIPMENT,
+        BULKDATAJOB,
+        UI_PROFILE,
+        TAGS,
+        CARRIER,
+        VENDOR_CREDENTIALS,
+        ORDER_REQUEST,
+        PRODUCT,
+        COMPOSITE_SHIPMENT,
+        RULES,
+        RECIPE,
+        RULESET,
+        VENDOR
+    }
+  record ChangelogKafka{
+      string object_id;
+      ObjectType object_type;
+      union {Tenant,User,Asset,Category,EventProfile,GeoFence,IntransitRoute,Site,Lease,Policy,Receiver,Role,SensorTag,ShipmentProfile,Shipment,BulkDataJob,Tags,UIProfile,Carrier,VendorCredentialsES,CompositeShipment,OrderRequest,Product,Rules,Recipe,Ruleset,Vendor} object_payload;
+      OperationType operation;
+      string changed_by;
+      string tenant_id;
+      string event_time;
+  }
+}

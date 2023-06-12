@@ -1,0 +1,25 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol EventProfileProtocol {
+    import idl "sub_detail.avdl";
+
+  record EventProfile{
+      string event_profile_name;
+      string partition_text;
+      string tenant_id;
+      union {null,string} tenant_name=null;
+      union {null,boolean} deleted=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,map<string>} event_config=null;
+      union {null,string} sensor_type=null;
+      union {null,map<string>} device_config=null;
+      union {null,boolean} isdefault=null;
+      union {null,boolean} is_reindex=null;
+
+  }
+
+
+}

@@ -1,0 +1,27 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol PolicyProtocol {
+    import idl "sub_detail.avdl";
+
+  record Policy{
+      string id;
+      string tenant_id;
+      union {null,string} name=null;
+      union {null,map<string>} conditions=null;
+      union {null,array<string>} actions=null;
+      union {null,string} entity_name=null;
+      union {null,boolean} is_allowed=null;
+      union {null,string} condition_spring_el=null;
+      union {null,string} target_spring_el=null;
+      union {null,string} module_name=null;
+      union {null,boolean} deleted=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+
+  }
+
+
+}

@@ -1,0 +1,31 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol DTBaseProtocol {
+   
+  record DTBaseDTO{
+      string id;    
+      string tenant_id;
+      union {null,string} callback_id=null;
+      union {null,string} operation=null;
+      union {null,string} type=null;
+      union {null,string} base_type=null;
+      union {null,string} graph_type=null;
+      union {null,string} json_payload=null;
+      union {null,string} meta_data=null;
+      union {null,boolean} retry_flag=null;
+      union {null,int} retry_counter=null;
+  }
+  
+   record DTBasePublishAck{
+        string id;
+        string tenant_id;
+        string status;
+        union {null,string} callback_id=null;      
+        union {null,string} base_type=null;
+        union {null,string} top_level_namespace=null;
+        union {null,string} status_description=null;
+        
+  }
+
+
+}

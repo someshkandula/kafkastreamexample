@@ -1,0 +1,36 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol GeoTestProtocol {
+     
+  record Circle{
+      string type="Circle";
+      array<double> coordinates;
+      string radius="1m";
+  }
+
+  record Point{
+      string type="Point";
+      array<double> coordinates;
+  }
+
+  record Polygon{
+      string type="Polygon";
+      array<array<array<double>>> coordinates;
+  }
+
+  record MultiPoint{
+      string type="MultiPoint";
+      array<array<double>> coordinates;
+  }
+
+  record Feature{
+      string type="Feature";
+      union {null,map<string>} properties=null;
+      union {Circle,Polygon,Point,MultiPoint} geometry; 
+      int zoomLevel;
+      union {null,string} address=null;
+     
+  }
+
+ 
+}

@@ -1,0 +1,24 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol RoleProtocol {
+    import idl "sub_detail.avdl";
+
+  record Role{
+      string id;
+      string tenant_id;
+      union {null,string} role_name=null;
+      union {null,string} module_name=null;
+      union {null,array<string>} policies=null;
+      union {null,string} properties=null;
+      union {null,array<string>} sharedTenants=null;
+      union {null,boolean} deleted=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+
+  }
+
+
+}

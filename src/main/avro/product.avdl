@@ -1,0 +1,34 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol ProductProtocol {
+	import idl "sub_detail.avdl";
+
+	record Product{
+		string id;
+		string tenant_id;
+		union {null,string} name=null;
+		union {null,string} external_id=null;
+		union {null,string} description=null;
+		union {null,string} categoryName =null;
+		union {null,string} category_external_id=null;
+		union {null,string} price_UOM=null;
+		union {null,double} selling_price=null;
+		union {null,double} renting_price=null;
+		union {null,string} image_URL=null;
+		union {null,boolean} is_rentable=null;
+		union {null,boolean} is_active=null;
+		union {null,boolean} is_sellable=null;
+		union {null,map<string>} attributes=null;
+		union {null,string} created_by=null;
+		union {null,string} creation_time=null;
+		union {null,string} modified_by=null;
+		union {null,string} modified_time=null;
+		union {null,boolean} is_reindex=null;
+		union {null,int } defaultRentalPeriod =null;
+		union {null,boolean} allowUserToSelectRentalPeriod=null;
+		union {null,string} rentalPriceType=null;
+
+	}
+
+
+}

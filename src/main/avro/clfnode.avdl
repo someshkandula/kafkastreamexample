@@ -1,0 +1,15 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol ClfNodeProtocol {
+   
+  record ClfNode{
+      string id;    
+      string tenant_id;
+      union {null,string} type=null;
+      union {null,string} base_type=null;
+      union {null,string} graph_type=null;
+      union {null,map<string>} properties=null;  
+  }
+
+
+}

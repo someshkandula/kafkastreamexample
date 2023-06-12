@@ -1,0 +1,13 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol ClfNodeAckProtocol {
+   
+  record ClfNodeAck{
+        string id;
+        string tenant_id;
+        string status;
+        string top_level_namespace;
+  }
+
+
+}

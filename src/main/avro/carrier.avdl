@@ -1,0 +1,19 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+protocol CarrierProtocol {
+    import idl "sub_detail.avdl";
+  record Carrier{
+      string  tenant_id;
+      string  carrierCode;
+      union {null,string} id=null;
+      union {null,string} carrierName=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} deleted=null;
+      union {null,string} slug=null;
+      union {null,boolean} valid=null;
+      union {null,map<string>} properties=null;
+      union {null,boolean} is_reindex=null;
+  }
+}

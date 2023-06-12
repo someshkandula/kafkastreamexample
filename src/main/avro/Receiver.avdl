@@ -1,0 +1,38 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol ReceiverProtocol {
+    import idl "sub_detail.avdl";
+    import idl "geo_support.avdl";
+
+  record Receiver{
+      string id;
+      string tenant_id;
+      union {null,string} name=null;
+      union {null,string} type=null;
+      union {null,string} physical_id=null;
+      union {null,string} status=null;
+      union {null,string} provisioned=null;
+      union {null,string} last_reported=null;
+      union {null,string} area_id=null;
+      union {null,string} area_name=null;
+      union {null,string} area_type=null;
+      union {null,string} building_id=null;
+      union {null,string} building_name=null;
+      union {null,string} building_type=null;
+      union {null,array<string>} tags=null;
+      union {null,map<string>} attributes=null;
+      union {null,string} parent=null;
+      union {null,Point} position=null;
+      union {null,string} last_edge_state=null;
+      union {null,string} edge_sync_state=null;
+      union {null,string} vendor_id=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} is_reindex=null;
+      
+  }
+
+
+}

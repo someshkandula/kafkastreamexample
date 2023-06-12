@@ -1,0 +1,28 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol BulkDataJobProtocol {
+    import idl "sub_detail.avdl";
+
+  record BulkDataJob{
+      string id;
+      string  tenant_id;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,string} status=null;
+      union {null,string} entity_type=null;
+      union {null,int} total_records_count=null;
+      union {null,int} success_records_count=null;
+      union {null,int} failed_records_count=null;
+      union {null,string} input_file_url=null;
+      union {null,string} input_file_type=null;
+      union {null,string} error_file_url=null;
+      union {null,string} operation=null;
+      union {null,boolean} deleted=null;
+      union {null,boolean} is_reindex=null;
+
+  }
+
+
+}

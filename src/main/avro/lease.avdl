@@ -1,0 +1,28 @@
+@namespace("com.cloudleaf.cloudos.avro.dto")
+
+protocol LeaseProtocol {
+    import idl "sub_detail.avdl";
+
+  record Lease{
+      string id;
+      string  tenant_id;
+      union {null,string} tenant_name=null;
+      union {null,string} ext_id=null;
+      union {null,string} status=null;
+      union {null,string} start_date=null;
+      union {null,string} end_date=null;
+      union {null,string} approved_date=null;
+      union {null,string} container_type=null;
+      union {null,int} no_of_containers=null;
+      union {null,string} master_air_way_bill_no=null;
+      union {null,string} creation_time=null;
+      union {null,string} modified_time=null;
+      union {null,string} created_by=null;
+      union {null,string} modified_by=null;
+      union {null,boolean} deleted=null;
+      union {null,boolean} is_reindex=null;
+
+  }
+
+
+}
